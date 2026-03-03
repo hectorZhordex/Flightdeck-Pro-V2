@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>FlightDeck Pro - Aviation Operations</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Disclaimer Modal -->
+        <div id="disclaimerModal" class="modal">
+            <div class="modal-content">
+                <h2 class="modal-title">FLIGHTDECK PRO DISCLAIMER</h2>
+                <div class="disclaimer-text">
+                    <p>THIS APPLICATION IS A REFERENCE TOOL ONLY.</p>
+                    <p>FlightDeck Pro is designed to assist professional flight crews with operational procedures and reference data. It is NOT certified flight equipment and must NOT be used as a primary reference for flight operations.</p>
+                    <p>Users are solely responsible for:</p>
+                    <ul>
+                        <li>Verifying all data against official airline procedures and manuals</li>
+                        <li>Ensuring compliance with applicable regulations</li>
+                        <li>Using only certified equipment for flight-critical decisions</li>
+                    </ul>
+                    <p>By accepting, you acknowledge this is a supplementary tool and assume all responsibility for its use.</p>
+                </div>
+                <button id="acceptDisclaimer" class="btn-primary">ACCEPT & CONTINUE</button>
+            </div>
+        </div>
+
+        <!-- Main App Container -->
+        <div id="mainApp" class="app-shell" style="display: none;">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <button id="menuToggle" class="icon-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                <h1 class="app-title">FLIGHTDECK PRO</h1>
+                <div class="status-indicators">
+                    <span id="utcClock" class="utc-clock">--:--:-- UTC</span>
+                </div>
+            </header>
+
+            <!-- Side Menu -->
+            <div id="sideMenu" class="side-menu">
+                <div class="side-menu-header">
+                    <h3>MENU</h3>
+                    <button id="menuClose" class="icon-btn">×</button>
+                </div>
+                <nav class="side-menu-nav">
+                    <a href="#" data-menu="limitations" class="menu-item">LIMITATIONS</a>
+                    <a href="#" data-menu="memory" class="menu-item">MEMORY ITEMS</a>
+                    <a href="#" data-menu="diversion" class="menu-item">DIVERSION</a>
+                    <a href="#" data-menu="coldops" class="menu-item">COLD OPS</a>
+                    <a href="#" data-menu="snowtam" class="menu-item">GRF / SNOWTAM</a>
+                    <a href="#" data-menu="ftl" class="menu-item">FLIGHT TIME LIMITATIONS</a>
+                    <a href="#" data-menu="notes" class="menu-item">PERSONAL NOTES</a>
+                    <a href="#" data-menu="loading" class="menu-item">LOADING</a>
+                    <a href="#" data-menu="settings" class="menu-item">SETTINGS</a>
+                    <a href="#" data-menu="support" class="menu-item">SUPPORT</a>
+                    <a href="#" data-menu="disclaimer" class="menu-item">DISCLAIMER</a>
+                    <a href="#" data-menu="whatsnew" class="menu-item">WHAT'S NEW</a>
+                </nav>
+            </div>
+
+            <!-- Main Content Area -->
+            <main id="mainContent" class="main-content">
+                <!-- Content will be dynamically loaded here -->
+            </main>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <button class="nav-tab" data-tab="ownchecks">
+                    <span class="nav-icon">✓</span>
+                    <span class="nav-label">OWN CHECKS</span>
+                </button>
+                <button class="nav-tab active" data-tab="preflt">
+                    <span class="nav-icon">▶</span>
+                    <span class="nav-label">PRE-FLT</span>
+                </button>
+                <button class="nav-tab" data-tab="crz">
+                    <span class="nav-icon">—</span>
+                    <span class="nav-label">CRZ</span>
+                </button>
+                <button class="nav-tab" data-tab="app">
+                    <span class="nav-icon">↓</span>
+                    <span class="nav-label">APP</span>
+                </button>
+                <button class="nav-tab" data-tab="pa">
+                    <span class="nav-icon">📢</span>
+                    <span class="nav-label">PA</span>
+                </button>
+                <button class="nav-tab" data-tab="notes">
+                    <span class="nav-icon">📝</span>
+                    <span class="nav-label">NOTES</span>
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
